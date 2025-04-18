@@ -5,11 +5,26 @@ import Image from 'next/image';
 import { FaInstagram, FaBars, FaTimes } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   const navLinks = [
     { href: "/", label: "Home" },
@@ -21,7 +36,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden w-full">
-      <header className="fixed w-full z-50 bg-transparent">
+      <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 shadow-md' : 'bg-transparent'}`}>
         {/* Mobile Header */}
         <div className="md:hidden flex justify-between items-center px-4 h-16">
           <Link href="/" className="flex items-center">
@@ -69,18 +84,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex-1 min-w-0"></div>
 
           <div className="flex items-center justify-center space-x-3 lg:space-x-6">
-            {navLinks.slice(0, 3).map(link => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`transition-colors text-sm lg:text-base whitespace-nowrap font-bold uppercase tracking-wide ${isActive ? 'text-[#3b82f6]' : pathname === '/' ? 'text-white hover:text-white/80' : 'text-[#0a192f] hover:text-[#1d4ed8]'}`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
+            {/* Navigation Links - hidden when scrolled */}
+            <div className={`transition-opacity duration-300 flex items-center space-x-3 lg:space-x-6 ${isScrolled ? 'opacity-0 invisible' : 'opacity-100 visible'}`}>
+              {navLinks.slice(0, 3).map(link => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`transition-colors text-sm lg:text-base whitespace-nowrap font-bold uppercase tracking-wide ${isActive ? 'text-[#3b82f6]' : pathname === '/' ? 'text-white hover:text-white/80' : 'text-[#0a192f] hover:text-[#1d4ed8]'}`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </div>
 
             <Link href="/" className="mx-3 lg:mx-4 flex-shrink-0">
               <div className="relative h-12 w-12 lg:h-14 lg:w-14">
@@ -95,18 +113,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
             </Link>
 
-            {navLinks.slice(3).map(link => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`transition-colors text-sm lg:text-base whitespace-nowrap font-bold uppercase tracking-wide ${isActive ? 'text-[#3b82f6]' : pathname === '/' ? 'text-white hover:text-white/80' : 'text-[#0a192f] hover:text-[#1d4ed8]'}`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
+            {/* Navigation Links - hidden when scrolled */}
+            <div className={`transition-opacity duration-300 flex items-center space-x-3 lg:space-x-6 ${isScrolled ? 'opacity-0 invisible' : 'opacity-100 visible'}`}>
+              {navLinks.slice(3).map(link => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`transition-colors text-sm lg:text-base whitespace-nowrap font-bold uppercase tracking-wide ${isActive ? 'text-[#3b82f6]' : pathname === '/' ? 'text-white hover:text-white/80' : 'text-[#0a192f] hover:text-[#1d4ed8]'}`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
 
           <div className="flex-1 min-w-0"></div>
