@@ -5,22 +5,12 @@ import Image from 'next/image';
 import { FaInstagram, FaBars, FaTimes } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   
-  // Track scroll position for header styling
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/members", label: "Team" },
@@ -31,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col bg-white overflow-x-hidden w-full">
-      <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 shadow-sm' : 'bg-transparent'}`}>
+      <header className="fixed w-full z-50 bg-transparent">
         {/* Mobile Header */}
         <div className="md:hidden flex justify-between items-center px-4 h-16">
           <Link href="/" className="flex items-center">

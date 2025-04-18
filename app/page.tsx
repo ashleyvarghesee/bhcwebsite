@@ -252,14 +252,6 @@ export default function Home() {
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#0a192f] mb-4 md:mb-6">
                   WHERE WE <span className="text-[#1d4ed8]">GO</span><span className="text-[#1d4ed8]">.</span>
                 </h2>
-                <a 
-                  href="mailto:bruinhealthconsulting@gmail.com" 
-                  className="inline-flex items-center gap-2 text-[#1d4ed8] hover:text-[#1e40af] transition-colors mt-4"
-                  aria-label="Email us"
-                >
-                  <FaEnvelope className="text-2xl" />
-                  <span className="text-lg font-medium">Contact Us</span>
-                </a>
               </div>
             </div>
           </div>
