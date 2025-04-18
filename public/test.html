@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/images/DS5A0014.JPG');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.75) blur(4px);
+            z-index: -1;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>Image Test Page</h1>
+        <p>This is a test to see if the background image can be displayed properly.</p>
+        <p>The image should be shown as a full-screen background with slight blur and darkening.</p>
+        <div style="margin-top: 2rem;">
+            <p>Direct image tag test:</p>
+            <img src="/images/DS5A0014.JPG" alt="Direct Image Test" style="max-width: 300px; margin-top: 1rem;">
+        </div>
+    </div>
+</body>
+</html> 
