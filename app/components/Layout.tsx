@@ -2,138 +2,145 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaBars, FaTimes } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  
+  // Track scroll position for header styling
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/members", label: "Team" },
     { href: "/clients", label: "Clients" },
-    { href: "/contact", label: "Contact" },
+    { href: "/contact", label: "Contact Us" },
     { href: "/apply", label: "Apply" },
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white overflow-x-hidden w-screen max-w-[100vw]">
-      <header className="sticky top-0 h-16 w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm">
-        {/* Mobile menu button */}
-        <div className="md:hidden absolute top-5 right-4 z-50">
-          <button 
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="text-gray-700 focus:outline-none"
+    <div className="min-h-screen flex flex-col bg-white overflow-x-hidden w-full">
+      <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 shadow-sm' : 'bg-transparent'}`}>
+        {/* Mobile Header */}
+        <div className="md:hidden flex justify-between items-center px-4 h-16">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/bear-logo.png"
+              alt="Bruin Health Consulting Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+              priority
+            />
+          </Link>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-gray-800 focus:outline-none"
+            aria-label="Toggle menu"
           >
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {menuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            {mobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
           </button>
         </div>
-
+        
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-20">
+            <div className="flex flex-col py-2">
+              {navLinks.map(link => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`py-3 px-4 font-semibold ${isActive ? 'text-[#3b82f6]' : 'text-[#0a192f]'}`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        )}
+        
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex h-full justify-center items-center px-4">
-          <div className="flex items-center space-x-1 lg:space-x-4">
-            {navLinks.slice(0, 2).map(link => {
+        <nav className="hidden md:flex container mx-auto h-20 px-4 justify-between items-center">
+          <div className="flex-1 min-w-0"></div>
+
+          <div className="flex items-center justify-center space-x-3 lg:space-x-6">
+            {navLinks.slice(0, 3).map(link => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-2 py-1 text-sm font-medium ${isActive ? 'text-[#3b82f6]' : 'text-[#0a192f] hover:text-[#1d4ed8]'}`}
+                  className={`transition-colors text-sm lg:text-base whitespace-nowrap font-bold uppercase tracking-wide ${isActive ? 'text-[#3b82f6]' : pathname === '/' ? 'text-white hover:text-white/80' : 'text-[#0a192f] hover:text-[#1d4ed8]'}`}
                 >
                   {link.label}
                 </Link>
               );
             })}
 
-            <Link href="/" className="mx-1 lg:mx-3 flex-shrink-0">
-              <div className="relative h-10 w-10">
+            <Link href="/" className="mx-3 lg:mx-4 flex-shrink-0">
+              <div className="relative h-12 w-12 lg:h-14 lg:w-14">
                 <Image
                   src="/bear-logo.png"
-                  alt="Bruin Health Logo"
+                  alt="Bruin Health Consulting Logo"
                   fill
-                  sizes="40px"
+                  sizes="(max-width: 1024px) 48px, 56px"
                   className="object-contain"
                   priority
                 />
               </div>
             </Link>
 
-            {navLinks.slice(2).map(link => {
+            {navLinks.slice(3).map(link => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-2 py-1 text-sm font-medium ${isActive ? 'text-[#3b82f6]' : 'text-[#0a192f] hover:text-[#1d4ed8]'}`}
+                  className={`transition-colors text-sm lg:text-base whitespace-nowrap font-bold uppercase tracking-wide ${isActive ? 'text-[#3b82f6]' : pathname === '/' ? 'text-white hover:text-white/80' : 'text-[#0a192f] hover:text-[#1d4ed8]'}`}
                 >
                   {link.label}
                 </Link>
               );
             })}
           </div>
-        </nav>
 
-        {/* Mobile Navigation */}
-        <div 
-          className={`fixed inset-0 bg-white z-40 transform ${menuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center justify-center`}
-        >
-          <div className="flex flex-col items-center space-y-6">
-            <Link href="/" onClick={() => setMenuOpen(false)} className="mb-4">
-              <div className="relative h-16 w-16">
-                <Image
-                  src="/bear-logo.png"
-                  alt="Bruin Health Logo"
-                  fill
-                  sizes="64px"
-                  className="object-contain"
-                />
-              </div>
-            </Link>
-            
-            {navLinks.map(link => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`text-lg font-medium ${isActive ? 'text-[#3b82f6]' : 'text-[#0a192f]'}`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </div>
-        </div>
+          <div className="flex-1 min-w-0"></div>
+        </nav>
       </header>
 
-      <main className="flex-grow w-full">
+      <main className="flex-grow pt-16 md:pt-20 w-full">
         {children}
       </main>
 
-      <footer className="py-6 border-t border-[#3b82f6]/20 bg-white w-full">
-        <div className="px-4 max-w-screen-xl mx-auto">
+      <footer className="py-6 md:py-8 border-t border-[#3b82f6]/20 bg-white">
+        <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <Image
                 src="/bear-logo.png"
-                alt="Bruin Health Logo"
-                width={50}
-                height={50}
+                alt="Bruin Health Consulting Logo"
+                width={60}
+                height={60}
                 className="object-contain"
               />
             </div>
             
-            <p className="text-xs text-gray-700 mb-4 md:mb-0 text-center md:text-left">
+            <p className="text-xs md:text-sm text-gray-700 mb-4 md:mb-0 text-center md:text-left">
               © 2025 Bruin Health Consulting. All Rights Reserved.
             </p>
             
