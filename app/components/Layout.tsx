@@ -24,9 +24,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      // Only hide when scrolling down
+      if (currentScrollY > lastScrollY) {
         setScrollingDown(true);
-      } else {
+      } 
+      // Only show header again after scrolling up significantly (20px) or reaching near the top
+      else if (lastScrollY - currentScrollY > 20 || currentScrollY < 50) {
         setScrollingDown(false);
       }
       setLastScrollY(currentScrollY);
