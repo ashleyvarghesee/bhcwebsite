@@ -167,7 +167,7 @@ export default function Home() {
                   We provide comprehensive consulting solutions including market analysis, operational efficiency improvement, strategic planning, and technology implementation. Our consultants receive rigorous training in healthcare-specific methodologies and bring diverse expertise to each client engagement.
                 </p>
                 <Link
-                  href="/join"
+                  href="/apply"
                   className="group inline-flex items-center gap-2 bg-[#1d4ed8] text-white px-6 py-3 rounded-lg hover:bg-[#1e40af] transition-all duration-300"
                 >
                   Learn How to Join
