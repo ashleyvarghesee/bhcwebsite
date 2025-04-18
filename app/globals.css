@@ -1,6 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500&display=swap');
 @import './animations.css';
-@import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -42,10 +45,6 @@ body::before {
   filter: brightness(0.75) blur(4px);
   opacity: 0.8;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer utilities {
   .glass-effect {
