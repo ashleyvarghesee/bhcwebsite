@@ -57,7 +57,7 @@ const TeamMembers = [
     name: "Diya Madhavan",
     role: "Healthcare Consultant",
     photo: "/images/IMG_5015.jpeg", 
-    bio: "Diya contributes to Bruin Health Consulting&apos;s mission with her expertise and dedication to healthcare solutions.",
+    bio: "Diya contributes to Bruin Health Consulting's mission with her expertise and dedication to healthcare solutions.",
     email: "madhavan.diya@gmail.com",
     linkedin: "https://www.linkedin.com/in/diyamadhavan/"
   },
@@ -73,7 +73,7 @@ const TeamMembers = [
     name: "Sankeerth Gandhari",
     role: "Healthcare Consultant",
     photo: "/images/image0.jpeg", 
-    bio: "Sankeerth brings dedicated expertise to Bruin Health Consulting&apos;s healthcare initiatives and client projects.",
+    bio: "Sankeerth brings dedicated expertise to Bruin Health Consulting's healthcare initiatives and client projects.",
     email: "sunnyg83@g.ucla.edu",
     linkedin: "https://www.linkedin.com/in/sankeerthgandhari/"
   },
@@ -81,7 +81,7 @@ const TeamMembers = [
     name: "Rishvik Kambhampati",
     role: "Healthcare Consultant",
     photo: "/images/DSC06887.jpg", 
-    bio: "Rishvik contributes his expertise to drive innovative healthcare solutions for Bruin Health Consulting&apos;s clients.",
+    bio: "Rishvik contributes his expertise to drive innovative healthcare solutions for Bruin Health Consulting's clients.",
     email: "rishvikk11@g.ucla.edu",
     linkedin: "https://www.linkedin.com/in/rishvik-kambhampati/"
   },
