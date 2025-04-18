@@ -161,10 +161,10 @@ export default function Home() {
               <div className="animate-fade-in-up">
                 <h3 className="text-2xl font-bold text-[#0a192f] mb-4">What We Do</h3>
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  Our organization trains new members and has a robust program to make sure every member is well equipped to assist in projects and contribute to BHC&apos;s greater goals as a consulting club.
+                  Bruin Health Consulting partners with healthcare organizations to deliver strategic consulting services that address complex challenges in the healthcare industry. Our team works with hospitals, pharmaceutical companies, medical device manufacturers, and research institutions to optimize operations and drive innovation.
                 </p>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  We offer career advice and resume building workshops that are open to all UCLA students with the purpose of educating the school community on the various professions and pathways people can take into business and medicine.
+                  We provide comprehensive consulting solutions including market analysis, operational efficiency improvement, strategic planning, and technology implementation. Our consultants receive rigorous training in healthcare-specific methodologies and bring diverse expertise to each client engagement.
                 </p>
                 <Link
                   href="/join"
