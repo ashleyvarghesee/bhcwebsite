@@ -66,13 +66,14 @@ export default function Home() {
       { threshold: 0.5 }
     );
 
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
+    const currentRef = statsRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (statsRef.current) {
-        observer.unobserve(statsRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -123,7 +124,7 @@ export default function Home() {
               BRUIN HEALTH CONSULTING
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto italic font-light leading-tight whitespace-nowrap overflow-hidden text-ellipsis px-2">
-              UCLA's first and foremost student-run healthcare consulting organization.
+              UCLA&apos;s first and foremost student-run healthcare consulting organization.
             </p>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto italic font-light mt-2 leading-tight whitespace-nowrap overflow-hidden text-ellipsis px-2">
               Committed to excellence, driven by impact.
@@ -162,7 +163,7 @@ export default function Home() {
               <div className="animate-fade-in-up">
                 <h3 className="text-2xl font-bold text-[#0a192f] mb-4">What We Do</h3>
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  Our organization trains new members and has a robust program to make sure every member is well equipped to assist in projects and contribute to BHC's greater goals as a consulting club.
+                  Our organization trains new members and has a robust program to make sure every member is well equipped to assist in projects and contribute to BHC&apos;s greater goals as a consulting club.
                 </p>
                 <p className="text-gray-700 mb-6 leading-relaxed">
                   We offer career advice and resume building workshops that are open to all UCLA students with the purpose of educating the school community on the various professions and pathways people can take into business and medicine.
@@ -208,7 +209,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-[#0a192f]">Healthcare Focus</h3>
                 <div className="w-10 h-1 bg-blue-200 mx-auto my-2"></div>
-                <p className="text-gray-700">Bruin Health Consulting (BHC) is UCLA's first consulting organization solely focused on elevating groups from all aspects of the healthcare sector.</p>
+                <p className="text-gray-700">BHC&apos;s first consulting organization solely focused on elevating groups from all aspects of the healthcare sector.</p>
               </div>
               
               <div className="text-center">
@@ -238,10 +239,12 @@ export default function Home() {
           <div className="absolute -top-40 left-0 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-4000 z-10"></div>
           <div className="absolute bottom-0 right-20 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000 z-10"></div>
           
-          <div className="w-full" style={{ maxHeight: "500px", overflow: "hidden" }}>
-            <img 
+          <div className="w-full relative" style={{ maxHeight: "500px", overflow: "hidden" }}>
+            <Image 
               src="/images/Screenshot 2025-04-17 151656.png" 
-              alt="Companies Background" 
+              alt="Companies Background"
+              width={1920}
+              height={500}
               className="w-full h-auto object-contain object-top"
               style={{ maxHeight: "500px" }}
             />

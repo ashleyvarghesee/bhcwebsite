@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaEnvelope, FaUser, FaPhone, FaPaperPlane } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -191,7 +191,6 @@ export default function Contact() {
                       ) : (
                         <>
                           Send Message
-                          <FaPaperPlane className="ml-2" />
                         </>
                       )}
                     </button>

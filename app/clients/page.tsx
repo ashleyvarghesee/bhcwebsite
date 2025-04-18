@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { FaLaptopMedical, FaChartLine, FaUserMd, FaHandshake } from "react-icons/fa";
 
@@ -63,7 +62,7 @@ export default function ServicesPage() {
           <div className="mt-20 bg-[#f8fafc] p-8 rounded-lg">
             <h2 className="text-2xl md:text-3xl font-bold text-[#0a192f] mb-6 text-center">Our Approach</h2>
             <p className="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
-              We believe in a collaborative approach that combines industry knowledge, analytical rigor, and creative problem-solving to deliver tailored solutions for each client's unique needs.
+              We believe in a collaborative approach that combines industry knowledge, analytical rigor, and creative problem-solving to deliver tailored solutions for each client&apos;s unique needs.
             </p>
             
             <div className="flex flex-col md:flex-row justify-between items-start space-y-10 md:space-y-0 md:space-x-6">
@@ -72,7 +71,7 @@ export default function ServicesPage() {
                   <span className="text-[#3b82f6] font-bold text-xl">1</span>
                 </div>
                 <h3 className="text-xl font-semibold text-[#0a192f] mb-2">Understand</h3>
-                <p className="text-gray-600">We start by deeply understanding your organization, challenges, and goals.</p>
+                <p className="text-gray-600">We start by deeply understanding your organization&apos;s challenges and goals.</p>
               </div>
               
               <div className="flex-1 flex flex-col items-center text-center">

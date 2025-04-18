@@ -13,11 +13,14 @@ export default function ApplyPage() {
       <div className="container mx-auto px-4 py-24 md:py-32">
         <div className="max-w-3xl mx-auto text-center">
           {/* Coming Soon Header */}
-          <div className="mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#0a192f] mb-10 tracking-tight">
+          <div className="text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-[#0a192f] mb-2">
               Applications Opening Soon
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#1e40af] to-[#3b82f6] mx-auto mb-8"></div>
+            <div className="w-20 h-1 bg-[#1d4ed8] mx-auto mb-6"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+              We&apos;re excited to welcome new members to our team. Applications for the upcoming cycle will open soon.
+            </p>
           </div>
           
           {/* Announcement Box */}
@@ -67,7 +70,7 @@ export default function ApplyPage() {
                 </div>
                 <h4 className="font-medium text-[#0a192f] mb-2">Contact Us</h4>
                 <p className="text-gray-600 text-sm mb-4">
-                  Have questions about our organization or application process?
+                  Learn about our organization&apos;s impact in healthcare consulting.
                 </p>
                 <Link 
                   href="/contact" 
