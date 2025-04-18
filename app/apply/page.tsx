@@ -32,7 +32,7 @@ export default function ApplyPage() {
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0a192f] mb-4">Coming Fall 2025</h2>
             <p className="text-gray-600 max-w-lg mx-auto text-lg leading-relaxed">
-              We're preparing to open applications for new members to join Bruin Health Consulting. Stay tuned for more information about the application process and requirements.
+              We&apos;re preparing to open applications for new members to join Bruin Health Consulting. Stay tuned for more information about the application process and requirements.
             </p>
           </div>
           
@@ -40,7 +40,7 @@ export default function ApplyPage() {
           <div className="mt-20">
             <h3 className="text-2xl font-semibold text-[#0a192f] mb-6">Interested in Learning More?</h3>
             <p className="text-gray-600 mb-8 text-lg max-w-xl mx-auto">
-              While applications aren't open yet, you can still explore our website to learn about our team and the work we do.
+              While applications aren&apos;t open yet, you can still explore our website to learn about our team and the work we do.
             </p>
             
             <div className="grid md:grid-cols-2 gap-6 mb-8">

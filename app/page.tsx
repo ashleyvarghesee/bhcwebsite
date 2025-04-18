@@ -12,6 +12,7 @@ export default function Home() {
     members: 0,
     satisfaction: 0
   });
+  
   const companies = [
     { name: "Amazon", logo: "/logos/Amazon_logo.svg" },
     { name: "JPMorgan", logo: "/logos/TyKPrJ01.svg" },
@@ -30,9 +31,6 @@ export default function Home() {
     { name: "Kumon", logo: "/logos/kumon.svg" },
     { name: "Cedars Sinai", logo: "/logos/cedars_sinai.svg" }
   ];
-
-  // Duplicate the companies array
-  const scrollingCompanies = [...companies, ...companies];
 
   useEffect(() => {
     // Stats animation observer

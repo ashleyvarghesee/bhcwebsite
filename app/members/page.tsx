@@ -57,7 +57,7 @@ const TeamMembers = [
     name: "Diya Madhavan",
     role: "Healthcare Consultant",
     photo: "/images/IMG_5015.jpeg", 
-    bio: "Diya contributes to Bruin Health Consulting's mission with her expertise and dedication to healthcare solutions.",
+    bio: "Diya contributes to Bruin Health Consulting&apos;s mission with her expertise and dedication to healthcare solutions.",
     email: "madhavan.diya@gmail.com",
     linkedin: "https://www.linkedin.com/in/diyamadhavan/"
   },
@@ -73,7 +73,7 @@ const TeamMembers = [
     name: "Sankeerth Gandhari",
     role: "Healthcare Consultant",
     photo: "/images/image0.jpeg", 
-    bio: "Sankeerth brings dedicated expertise to Bruin Health Consulting's healthcare initiatives and client projects.",
+    bio: "Sankeerth brings dedicated expertise to Bruin Health Consulting&apos;s healthcare initiatives and client projects.",
     email: "sunnyg83@g.ucla.edu",
     linkedin: "https://www.linkedin.com/in/sankeerthgandhari/"
   },
@@ -81,7 +81,7 @@ const TeamMembers = [
     name: "Rishvik Kambhampati",
     role: "Healthcare Consultant",
     photo: "/images/DSC06887.jpg", 
-    bio: "Rishvik contributes his expertise to drive innovative healthcare solutions for Bruin Health Consulting's clients.",
+    bio: "Rishvik contributes his expertise to drive innovative healthcare solutions for Bruin Health Consulting&apos;s clients.",
     email: "rishvikk11@g.ucla.edu",
     linkedin: "https://www.linkedin.com/in/rishvik-kambhampati/"
   },
@@ -139,7 +139,7 @@ export default function Team() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-[#1d4ed8] hover:text-white transition-colors"
-                      aria-label={`${member.name}'s LinkedIn profile`}
+                      aria-label={`${member.name}&apos;s LinkedIn profile`}
                     >
                       <FaLinkedin size={16} />
                     </a>

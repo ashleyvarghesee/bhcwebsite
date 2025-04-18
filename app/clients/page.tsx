@@ -102,9 +102,9 @@ export default function ServicesPage() {
           
           {/* Call to Action */}
           <div className="mt-20 text-center">
-            <h2 className="text-2xl font-bold text-[#0a192f] mb-6">Ready to Explore How We Can Help?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Let&apos;s Discuss Your Healthcare Goals</h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Connect with our team to discuss your organization's needs and discover how Bruin Health Consulting can help you navigate challenges and seize opportunities.
+              Connect with our team to discuss your organization&apos;s needs and discover how Bruin Health Consulting can help you navigate challenges and seize opportunities.
             </p>
             <Link
               href="/contact"
