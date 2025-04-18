@@ -24,6 +24,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      // Never hide header at the very top of the page (first 10px)
+      if (currentScrollY < 10) {
+        setScrollingDown(false);
+        return;
+      }
       // Only hide when scrolling down
       if (currentScrollY > lastScrollY) {
         setScrollingDown(true);
@@ -60,7 +65,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-gray-800 focus:outline-none"
+            className={`focus:outline-none ${pathname === '/members' ? 'text-white' : 'text-gray-800'}`}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
