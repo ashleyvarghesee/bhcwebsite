@@ -8,7 +8,7 @@ const TeamMembers = [
   {
     name: "Ganesh Venumbaka",
     role: "President",
-    photo: "/images/DS5A8050.JPG",
+    photo: "/images/DS5A8050.jpg",
     bio: "Ganesh is the President of Bruin Health Consulting, focusing on strategic leadership and client relationships.",
     email: "ganesh.venumbaka@gmail.com",
     linkedin: "https://www.linkedin.com/in/ganesh-venumbaka-2739761b2/"
@@ -120,6 +120,9 @@ export default function Team() {
                     alt={member.name}
                     fill
                     className="object-cover"
+                    priority={index === 0}
+                    quality={90}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-6">
