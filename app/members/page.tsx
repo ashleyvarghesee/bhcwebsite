@@ -117,12 +117,12 @@ export default function Team() {
                 key={index} 
                 className="bg-white rounded border border-gray-200 hover:shadow-md transition-shadow duration-300 overflow-hidden"
               >
-                <div className="relative h-40 sm:h-auto sm:aspect-square overflow-hidden bg-gray-100">
+                <div className="relative aspect-[4/3] sm:aspect-square overflow-hidden bg-gray-100">
                   <Image
                     src={member.photo}
                     alt={member.name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top sm:object-center"
                     sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
                   />
                 </div>
