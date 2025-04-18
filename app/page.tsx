@@ -117,14 +117,14 @@ export default function Home() {
       <div className="relative z-10 text-white">
         {/* Hero section - reducing height to less than full screen */}
         <div className="h-[85vh] flex items-center justify-center">
-          <div className="text-center px-4 -mt-28">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-wider leading-tight">
+          <div className="text-center px-4 -mt-28 max-w-full">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-wide leading-tight px-1 mx-auto max-w-[95vw] overflow-hidden">
               BRUIN HEALTH CONSULTING
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto italic font-light leading-tight whitespace-nowrap overflow-hidden text-ellipsis px-2">
+            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-gray-200 max-w-xs sm:max-w-lg md:max-w-2xl mx-auto italic font-light leading-tight px-1 break-words">
               UCLA&apos;s first and foremost student-run healthcare consulting organization.
             </p>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto italic font-light mt-2 leading-tight whitespace-nowrap overflow-hidden text-ellipsis px-2">
+            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-gray-200 max-w-xs sm:max-w-lg md:max-w-2xl mx-auto italic font-light mt-2 leading-tight px-1 break-words">
               Committed to excellence, driven by impact.
             </p>
           </div>
