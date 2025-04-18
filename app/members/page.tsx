@@ -98,53 +98,56 @@ const TeamMembers = [
 
 export default function Team() {
   return (
-    <main className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-24 md:py-32">
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-12 text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-[#0a192f] mb-2">
+    <main className="min-h-screen bg-white w-full overflow-x-hidden">
+      <div className="w-full max-w-screen px-4 sm:px-6 py-12 sm:py-16 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-6 sm:mb-10 text-center">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a192f] mb-2">
               Our Team
             </h1>
-            <div className="w-20 h-1 bg-[#1d4ed8] mx-auto mb-6"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <div className="w-12 sm:w-16 h-0.5 bg-[#1d4ed8] mx-auto mb-3 sm:mb-4"></div>
+            <p className="text-gray-600 max-w-lg mx-auto text-sm sm:text-base px-2">
               Meet the dedicated professionals behind Bruin Health Consulting, committed to excellence in healthcare consulting.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
             {TeamMembers.map((member, index) => (
-              <div key={index} className="bg-white border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-                <div className="relative aspect-square overflow-hidden bg-gray-100">
+              <div 
+                key={index} 
+                className="bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+              >
+                <div className="relative aspect-[4/3] sm:aspect-square overflow-hidden bg-gray-100">
                   <Image
                     src={member.photo}
                     alt={member.name}
                     fill
-                    className="object-cover"
+                    className="object-cover hover:scale-105 transition-transform duration-500"
                     priority={index === 0}
                     quality={90}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
-                <div className="p-6">
-                  <h2 className="text-xl font-bold text-[#0a192f]">{member.name}</h2>
-                  <p className="text-[#1d4ed8] font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-600 mb-4">{member.bio}</p>
-                  <div className="flex gap-3">
+                <div className="p-3 sm:p-4">
+                  <h2 className="text-base sm:text-lg font-bold text-[#0a192f] mb-1">{member.name}</h2>
+                  <p className="text-[#1d4ed8] font-medium text-sm mb-2">{member.role}</p>
+                  <p className="text-gray-600 text-sm mb-3 line-clamp-3">{member.bio}</p>
+                  <div className="flex gap-2">
                     <a
                       href={`mailto:${member.email}`}
-                      className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-[#1d4ed8] hover:text-white transition-colors"
+                      className="w-7 h-7 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-[#1d4ed8] hover:text-white transition-colors"
                       aria-label={`Email ${member.name}`}
                     >
-                      <FaEnvelope size={16} />
+                      <FaEnvelope size={12} className="sm:text-sm" />
                     </a>
                     <a
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-[#1d4ed8] hover:text-white transition-colors"
-                      aria-label={`${member.name}&apos;s LinkedIn profile`}
+                      className="w-7 h-7 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-[#1d4ed8] hover:text-white transition-colors"
+                      aria-label={`${member.name}'s LinkedIn profile`}
                     >
-                      <FaLinkedin size={16} />
+                      <FaLinkedin size={12} className="sm:text-sm" />
                     </a>
                   </div>
                 </div>
@@ -152,10 +155,10 @@ export default function Team() {
             ))}
           </div>
           
-          <div className="mt-16 text-center">
+          <div className="mt-8 sm:mt-12 text-center">
             <Link 
               href="/contact"
-              className="inline-flex items-center text-[#1d4ed8] hover:text-[#1e40af] transition-colors font-medium"
+              className="inline-flex items-center text-[#1d4ed8] hover:text-[#1e40af] transition-colors font-medium text-sm"
             >
               Interested in joining our team? Contact us →
             </Link>
