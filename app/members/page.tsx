@@ -64,7 +64,7 @@ const TeamMembers = [
   {
     name: "Samarth Hedge",
     role: "Healthcare Consultant",
-    photo: "/images/IMG_1731.jpg", 
+    photo: "/images/Screenshot 2025-04-17 232313.png", 
     bio: "Samarth contributes valuable insights and expertise to healthcare projects at Bruin Health Consulting.",
     email: "samarthhegde@g.ucla.edu",
     linkedin: "https://www.linkedin.com/in/samarth-hegde-a099b2260/"
