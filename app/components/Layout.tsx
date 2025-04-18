@@ -65,7 +65,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`focus:outline-none ${pathname === '/members' ? 'text-white' : 'text-gray-800'}`}
+            className={`focus:outline-none ${pathname === '/' ? 'text-white' : 'text-gray-800'}`}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
