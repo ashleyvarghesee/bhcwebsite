@@ -82,49 +82,30 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen" style={bgStyle}>
-      {/* Background image container */}
+    <main className="relative min-h-screen overflow-x-hidden">
+      {/* Background image container - Fixed positioning */}
       <div 
+        className="fixed inset-0 z-0"
         style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
           backgroundImage: `url('/images/DS5A0014.JPG')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.7,
-          filter: 'blur(4px)',
-          zIndex: 0
+          filter: 'brightness(0.5) blur(4px)',
         }}
-      ></div>
-      
-      {/* Dark overlay */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          zIndex: 1
-        }}
-      ></div>
+      />
 
       {/* Main content */}
-      <div className="relative z-10 text-white">
-        {/* Hero section - reducing height to less than full screen */}
-        <div className="h-[85vh] flex items-center justify-center">
-          <div className="text-center px-4 -mt-28">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-wider leading-tight">
-              BRUIN HEALTH CONSULTING
+      <div className="relative z-10">
+        {/* Hero section */}
+        <div className="min-h-[85vh] flex items-center justify-center px-4">
+          <div className="text-center">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-wider leading-tight text-white">
+              BRUIN HEALTH<br />CONSULTING
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto italic font-light leading-tight whitespace-nowrap overflow-hidden text-ellipsis px-2">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-xl mx-auto italic font-light leading-relaxed mb-2">
               UCLA&apos;s first and foremost student-run healthcare consulting organization.
             </p>
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto italic font-light mt-2 leading-tight whitespace-nowrap overflow-hidden text-ellipsis px-2">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-xl mx-auto italic font-light leading-relaxed">
               Committed to excellence, driven by impact.
             </p>
           </div>
@@ -264,7 +245,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </main>
   );
 }

@@ -98,20 +98,20 @@ const TeamMembers = [
 
 export default function Team() {
   return (
-    <main className="min-h-screen bg-white w-full overflow-x-hidden">
-      <div className="w-full max-w-screen px-4 sm:px-6 py-12 sm:py-16 md:py-20">
+    <main className="min-h-screen bg-white overflow-x-hidden">
+      <div className="px-4 py-12 sm:py-16 md:py-20">
         <div className="max-w-6xl mx-auto">
           <div className="mb-6 sm:mb-10 text-center">
             <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0a192f] mb-2">
               Our Team
             </h1>
             <div className="w-12 sm:w-16 h-0.5 bg-[#1d4ed8] mx-auto mb-3 sm:mb-4"></div>
-            <p className="text-gray-600 max-w-lg mx-auto text-sm sm:text-base px-2">
+            <p className="text-gray-600 max-w-lg mx-auto text-sm sm:text-base">
               Meet the dedicated professionals behind Bruin Health Consulting, committed to excellence in healthcare consulting.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {TeamMembers.map((member, index) => (
               <div 
                 key={index} 
@@ -125,7 +125,7 @@ export default function Team() {
                     className="object-cover hover:scale-105 transition-transform duration-500"
                     priority={index === 0}
                     quality={90}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes="(max-width: 640px) 95vw, (max-width: 1024px) 45vw, 30vw"
                   />
                 </div>
                 <div className="p-3 sm:p-4">
