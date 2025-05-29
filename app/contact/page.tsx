@@ -30,16 +30,19 @@ export default function Contact() {
     
     try {
       // Send to Formspree
-      const response = await fetch("https://formspree.io/f/xrbpwpvz", {
+      const response = await fetch("https://formspree.io/f/xqkobqnv", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Accept": "application/json"
         },
         body: JSON.stringify(formData)
       });
       
+      const result = await response.json();
+      
       if (!response.ok) {
-        throw new Error("Failed to send message. Please try again later.");
+        throw new Error(result.error || "Failed to send message. Please try again later.");
       }
       
       setIsSubmitting(false);
@@ -52,7 +55,8 @@ export default function Contact() {
       });
     } catch (err) {
       setIsSubmitting(false);
-      setError(err instanceof Error ? err.message : "An unknown error occurred");
+      setError(err instanceof Error ? err.message : "An unknown error occurred. Please try again later.");
+      console.error("Form submission error:", err);
     }
   };
 
