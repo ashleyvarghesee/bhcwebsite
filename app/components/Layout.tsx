@@ -173,7 +173,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <FaInstagram size={20} />
               </a>
               <a
-                href="mailto:ganesh.venumbaka@gmail.com"
+                href="mailto:bruinhealthconsulting@gmail.com"
                 className="text-gray-700 hover:text-[#3b82f6] transition-colors"
               >
                 <MdEmail size={20} />
