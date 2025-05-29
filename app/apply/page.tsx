@@ -30,10 +30,18 @@ export default function ApplyPage() {
                 <FaCalendarAlt className="text-[#1d4ed8] text-3xl" />
               </div>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0a192f] mb-4">Coming Fall 2025</h2>
-            <p className="text-gray-600 max-w-lg mx-auto text-lg leading-relaxed">
-              We&apos;re preparing to open applications for new members to join Bruin Health Consulting. Stay tuned for more information about the application process and requirements.
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0a192f] mb-4">BHC is Recruiting!</h2>
+            <p className="text-gray-600 max-w-lg mx-auto text-lg leading-relaxed mb-6">
+              BHC is recruiting new members for summer consulting projects with biotech and biomedical companies. We're looking for students interested in business/tech consulting.
             </p>
+            <Link 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfIwuuZowhwrjvdA8fGMo4gkuROBJuIocvUwUnJb8o79OsYRA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1d4ed8] text-white hover:bg-[#1e40af] transition-colors rounded-md text-lg font-medium"
+            >
+              Apply Now
+            </Link>
           </div>
           
           {/* Additional Information */}
