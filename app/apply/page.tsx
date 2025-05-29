@@ -15,11 +15,11 @@ export default function ApplyPage() {
           {/* Coming Soon Header */}
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-[#0a192f] mb-2">
-              Applications Opening Soon
+              Applications Open Now
             </h1>
             <div className="w-20 h-1 bg-[#1d4ed8] mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-              We&apos;re excited to welcome new members to our team. Applications for the upcoming cycle will open soon.
+              We&apos;re excited to welcome new members to our team. Applications for the summer are open now.
             </p>
           </div>
           
