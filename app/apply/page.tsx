@@ -48,7 +48,7 @@ export default function ApplyPage() {
           <div className="mt-20">
             <h3 className="text-2xl font-semibold text-[#0a192f] mb-6">Interested in Learning More?</h3>
             <p className="text-gray-600 mb-8 text-lg max-w-xl mx-auto">
-              While applications aren&apos;t open yet, you can still explore our website to learn about our team and the work we do.
+              If you're still interested in learning more, check out our team page and contact us!
             </p>
             
             <div className="grid md:grid-cols-2 gap-6 mb-8">
