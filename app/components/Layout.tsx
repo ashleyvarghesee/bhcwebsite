@@ -15,7 +15,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/members", label: "Team" },
     { href: "/clients", label: "Clients" },
     { href: "/contact", label: "Contact Us" },
     { href: "/apply", label: "Apply" },
@@ -49,10 +48,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }`;
 
   return (
-    <div className="min-h-screen flex flex-col bg-white overflow-x-hidden w-full">
+    <div className="min-h-screen flex flex-col bg-black overflow-x-hidden w-full">
       <header className={headerClasses}>
         {/* Mobile Header */}
-        <div className="md:hidden flex justify-between items-center px-4 h-16">
+        <div className="md:hidden flex justify-between items-center px-4 h-16 bg-black/95 backdrop-blur-sm border-b border-gray-800">
           <Link href="/" className="flex items-center">
             <Image
               src="/bear-logo.png"
@@ -65,7 +64,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`focus:outline-none ${pathname === '/' ? 'text-white' : 'text-gray-800'}`}
+
+            className="focus:outline-none text-white"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
@@ -74,7 +74,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-20">
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-gray-900 shadow-lg z-20 border-b border-gray-800">
             <div className="flex flex-col py-2">
               {navLinks.map(link => {
                 const isActive = pathname === link.href;
@@ -83,7 +83,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`py-3 px-4 font-semibold ${isActive ? 'text-[#3b82f6]' : 'text-[#0a192f]'}`}
+                    className={`py-3 px-4 font-semibold ${isActive ? 'text-yellow-400' : 'text-white hover:text-yellow-400'}`}
                   >
                     {link.label}
                   </Link>
@@ -94,24 +94,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex container mx-auto h-20 px-4 justify-between items-center">
+        <nav className="hidden md:flex container mx-auto h-20 px-4 justify-between items-center bg-black/95 backdrop-blur-sm border-b border-gray-800">
           <div className="flex-1 min-w-0"></div>
 
-          <div className="flex items-center justify-center space-x-3 lg:space-x-6">
+          <div className="flex items-center justify-center space-x-8 lg:space-x-12">
             {navLinks.slice(0, 3).map(link => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`transition-colors text-sm lg:text-base whitespace-nowrap font-bold uppercase tracking-wide ${isActive ? 'text-[#3b82f6]' : pathname === '/' ? 'text-white hover:text-white/80' : 'text-[#0a192f] hover:text-[#1d4ed8]'}`}
+                  className={`transition-colors text-sm lg:text-base whitespace-nowrap font-medium ${isActive ? 'text-yellow-400' : 'text-gray-300 hover:text-white'}`}
                 >
                   {link.label}
                 </Link>
               );
             })}
 
-            <Link href="/" className="mx-3 lg:mx-4 flex-shrink-0">
+            <Link href="/" className="mx-4 lg:mx-6 flex-shrink-0">
               <div className="relative h-12 w-12 lg:h-14 lg:w-14">
                 <Image
                   src="/bear-logo.png"
@@ -130,7 +130,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`transition-colors text-sm lg:text-base whitespace-nowrap font-bold uppercase tracking-wide ${isActive ? 'text-[#3b82f6]' : pathname === '/' ? 'text-white hover:text-white/80' : 'text-[#0a192f] hover:text-[#1d4ed8]'}`}
+                  className={`transition-colors text-sm lg:text-base whitespace-nowrap font-medium ${isActive ? 'text-yellow-400' : 'text-gray-300 hover:text-white'}`}
                 >
                   {link.label}
                 </Link>
@@ -146,20 +146,46 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
 
-      <footer className="py-6 md:py-8 border-t border-[#3b82f6]/20 bg-white">
+      <footer className="py-12 md:py-16 bg-black border-t border-gray-800">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <Image
-                src="/bear-logo.png"
-                alt="Bruin Health Consulting Logo"
-                width={60}
-                height={60}
-                className="object-contain"
-              />
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div className="md:col-span-2">
+              <div className="flex items-center mb-4">
+                <Image
+                  src="/bear-logo.png"
+                  alt="Bruin Health Consulting Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain mr-3"
+                />
+                <span className="text-white text-xl font-semibold">Bruin Health Consulting</span>
+              </div>
+              <p className="text-gray-400 text-sm max-w-md">
+                UCLA's first and foremost student-run healthcare consulting organization. Committed to excellence, driven by impact.
+              </p>
             </div>
             
-            <p className="text-xs md:text-sm text-gray-700 mb-4 md:mb-0 text-center md:text-left">
+            <div>
+              <h3 className="text-white font-semibold mb-4">Company</h3>
+              <ul className="space-y-2">
+                <li><Link href="/apply" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Careers</Link></li>
+                <li><Link href="/contact" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Contact</Link></li>
+                <li><a href="https://www.instagram.com/bruinhealthconsulting/" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/company/bruin-health-consulting/" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">LinkedIn</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-white font-semibold mb-4">Legal</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Terms & Conditions</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm mb-4 md:mb-0">
               © 2025 Bruin Health Consulting. All Rights Reserved.
             </p>
             
@@ -168,13 +194,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 href="https://www.instagram.com/bruinhealthconsulting/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-[#3b82f6] transition-colors"
+                className="text-gray-400 hover:text-yellow-400 transition-colors"
               >
                 <FaInstagram size={20} />
               </a>
               <a
                 href="mailto:bruinhealthconsulting@gmail.com"
-                className="text-gray-700 hover:text-[#3b82f6] transition-colors"
+                className="text-gray-400 hover:text-yellow-400 transition-colors"
               >
                 <MdEmail size={20} />
               </a>

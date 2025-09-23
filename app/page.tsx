@@ -1,262 +1,226 @@
 "use client";
 
 import Link from "next/link";
-import { FaArrowRight, FaStethoscope, FaHeartbeat, FaHospital, FaEnvelope } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
+import { FaArrowRight, FaStethoscope, FaHospital, FaChartLine } from "react-icons/fa";
 import Image from "next/image";
 
 export default function Home() {
-  const statsRef = useRef<HTMLDivElement>(null);
-  const [counts, setCounts] = useState({
-    projects: 0,
-    members: 0,
-    satisfaction: 0
-  });
-  
-  const companies = [
-    { name: "Amazon", logo: "/logos/Amazon_logo.svg" },
-    { name: "JPMorgan", logo: "/logos/TyKPrJ01.svg" },
-    { name: "NASA", logo: "/logos/NASA_logo.svg" },
-    { name: "Cisco", logo: "/logos/cisco.svg" },
-    { name: "Johns Hopkins", logo: "/logos/johnshopkins.svg" },
-    { name: "UCLA Geffen", logo: "/logos/ucla_geffen.svg" },
-    { name: "Wells Fargo", logo: "/logos/wells_fargo.svg" },
-    { name: "Lawrence Berkeley National Lab", logo: "/logos/lbnl.svg" },
-    { name: "Berkeley HAAS", logo: "/logos/berkeley_haas.svg" },
-    { name: "Cambridge", logo: "/logos/cambridge.svg" },
-    { name: "Google", logo: "/logos/google.svg" },
-    { name: "LAFD", logo: "/logos/lafd.svg" },
-    { name: "Boeing", logo: "/logos/boeing.svg" },
-    { name: "LASD", logo: "/logos/lasd.svg" },
-    { name: "Kumon", logo: "/logos/kumon.svg" },
-    { name: "Cedars Sinai", logo: "/logos/cedars_sinai.svg" }
-  ];
-
-  useEffect(() => {
-    // Stats animation observer
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Start counting animation
-            const duration = 2000; // 2 seconds
-            const steps = 60;
-            const projectsIncrement = 4 / steps;
-            const membersIncrement = 20 / steps;
-            const satisfactionIncrement = 100 / steps;
-
-            let currentStep = 0;
-            const interval = setInterval(() => {
-              currentStep++;
-              setCounts({
-                projects: Math.min(4, Math.round(projectsIncrement * currentStep)),
-                members: Math.min(20, Math.round(membersIncrement * currentStep)),
-                satisfaction: Math.min(100, Math.round(satisfactionIncrement * currentStep))
-              });
-
-              if (currentStep >= steps) {
-                clearInterval(interval);
-              }
-            }, duration / steps);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    const currentRef = statsRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
-
-  // Fallback background color
-  const bgStyle = {
-    backgroundColor: '#ffffff'
-  };
 
   return (
-    <main className="min-h-screen" style={bgStyle}>
-      {/* Background image container */}
-      <div 
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundImage: `url('/images/DS5A0014.JPG')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.7,
-          filter: 'blur(4px)',
-          zIndex: 0
-        }}
-      ></div>
-      
-      {/* Dark overlay */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          zIndex: 1
-        }}
-      ></div>
+    <main className="min-h-screen bg-black">
+      {/* Hero Section - Aviato Style with Dark Theme and Background Image */}
+      <section className="relative bg-black py-20 lg:py-32 overflow-hidden">
+        {/* Background image container */}
+        <div 
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: `url('/images/skyline.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.3,
+            filter: 'blur(2px)',
+            zIndex: 0
+          }}
+        ></div>
+        
+        {/* Dark overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            zIndex: 1
+          }}
+        ></div>
 
-      {/* Main content */}
-      <div className="relative z-10 text-white">
-        {/* Hero section - reducing height to less than full screen */}
-        <div className="h-[85vh] flex items-center justify-center">
-          <div className="text-center px-4 -mt-28 max-w-full">
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 tracking-wide leading-tight px-1 mx-auto max-w-[95vw] overflow-hidden">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            {/* Main headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
               BRUIN HEALTH CONSULTING
             </h1>
-            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-gray-200 max-w-xs sm:max-w-lg md:max-w-2xl mx-auto italic font-light leading-tight px-1 break-words">
-              UCLA&apos;s first and foremost student-run healthcare consulting organization.
+            
+            {/* Subtitle */}
+            <p className="text-xl lg:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
+              UCLA's premier student-run consulting organization specializing in healthcare and technology.
             </p>
-            <p className="text-sm xs:text-base sm:text-lg md:text-xl text-gray-200 max-w-xs sm:max-w-lg md:max-w-2xl mx-auto italic font-light mt-2 leading-tight px-1 break-words">
+            <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
               Committed to excellence, driven by impact.
             </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+              <Link
+                href="/apply"
+                className="bg-yellow-400 text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-colors"
+              >
+                Join Our Team
+              </Link>
+              <Link
+                href="/contact"
+                className="border border-blue-400 text-blue-400 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-400/10 transition-colors"
+              >
+                Partner With Us
+              </Link>
+            </div>
+            
           </div>
         </div>
+      </section>
 
-        {/* Stats section - now appears higher on the page */}
-        <div className="relative py-8 md:py-12 bg-gray-100" ref={statsRef}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-[#1d4ed8] mb-2">{counts.projects}</div>
-                <p className="text-gray-800 text-base uppercase tracking-wider">Healthcare Projects</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-[#1d4ed8] mb-2">{counts.members}</div>
-                <p className="text-gray-800 text-base uppercase tracking-wider">Healthcare Professionals</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-[#1d4ed8] mb-2">{counts.satisfaction}%</div>
-                <p className="text-gray-800 text-base uppercase tracking-wider">Client Satisfaction</p>
+      {/* What is BHC Section */}
+      <section className="py-20 lg:py-32 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                What is Bruin Health Consulting?
+              </h2>
+              <p className="text-xl lg:text-2xl text-gray-300 mb-6 leading-relaxed">
+                UCLA's premier student-run consulting organization specializing in healthcare and technology.
+              </p>
+              <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                BHC partners with healthcare organizations, biotech companies, and health tech startups to deliver strategic consulting services. Our team works on real-world projects ranging from healthcare operations optimization to digital health implementation, providing members with hands-on experience in both healthcare and technology consulting.
+              </p>
+              <Link
+                href="/apply"
+                className="bg-yellow-400 text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-colors inline-flex items-center gap-2"
+              >
+                Learn How to Join
+                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-lg shadow-2xl">
+                <Image
+                  src="/images/DS5A0014.JPG"
+                  alt="Bruin Health Consulting Team"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
             </div>
           </div>
+          
+          {/* Photo Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            <div className="relative overflow-hidden rounded-lg">
+              <Image
+                src="/images/IMG_1240.JPG"
+                alt="BHC Team Activity"
+                width={300}
+                height={300}
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="relative overflow-hidden rounded-lg">
+              <Image
+                src="/images/IMG_0531 (1).JPG"
+                alt="BHC Team Meeting"
+                width={300}
+                height={300}
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="relative overflow-hidden rounded-lg">
+              <Image
+                src="/images/IMG_3046 (1).jpg"
+                alt="BHC Consulting Work"
+                width={300}
+                height={300}
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="relative overflow-hidden rounded-lg">
+              <Image
+                src="/images/IMG_7390 (1).JPG"
+                alt="BHC Team Collaboration"
+                width={300}
+                height={300}
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaStethoscope className="text-blue-400 text-2xl" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Healthcare Focus</h3>
+              <p className="text-gray-400">BHC's first consulting organization solely focused on elevating groups from all aspects of the healthcare sector.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaHospital className="text-blue-400 text-2xl" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Diverse Clients</h3>
+              <p className="text-gray-400">We work with hospitals, pharmaceutical companies, biotech firms, health tech startups, and clinical research organizations.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaChartLine className="text-blue-400 text-2xl" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Real Experience</h3>
+              <p className="text-gray-400">Our project-based approach ensures members gain real-world experience in healthcare and technology consulting.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Final CTA Section with Companies Banner */}
+      <section className="py-20 lg:py-32 relative overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image 
+            src="/images/Screenshot 2025-04-17 151656.png" 
+            alt="Companies We Work With"
+            width={1920}
+            height={800}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
         
-        {/* What We Do section */}
-        <div className="relative py-12 md:py-14 pb-4 bg-white overflow-hidden">
-          {/* Background decorative elements */}
-          <div className="absolute top-24 left-24 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="absolute -bottom-40 right-0 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob animation-delay-4000"></div>
+        {/* Content overlay */}
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Ready to make an impact in healthcare and technology?
+          </h2>
           
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="animate-fade-in-up">
-                <h3 className="text-2xl font-bold text-[#0a192f] mb-4">What We Do</h3>
-                <p className="text-gray-700 mb-4 leading-relaxed">
-                  Bruin Health Consulting partners with healthcare organizations to deliver strategic consulting services that address complex challenges in the healthcare industry. Our team works with hospitals, pharmaceutical companies, medical device manufacturers, and research institutions to optimize operations and drive innovation.
-                </p>
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  We provide comprehensive consulting solutions including market analysis, operational efficiency improvement, strategic planning, and technology implementation. Our consultants receive rigorous training in healthcare-specific methodologies and bring diverse expertise to each client engagement.
-                </p>
-                <Link
-                  href="/apply"
-                  className="group inline-flex items-center gap-2 bg-[#1d4ed8] text-white px-6 py-3 rounded-lg hover:bg-[#1e40af] transition-all duration-300"
-                >
-                  Learn How to Join
-                  <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-              
-              <div className="animate-fade-in-up delay-200">
-                <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-25"></div>
-                  <div className="relative overflow-hidden rounded-lg shadow-xl">
-        <Image
-                      src="/images/DS5A0014.JPG"
-                      alt="Bruin Health Consulting Team"
-                      width={600}
-                      height={400}
-                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <Link
+              href="/apply"
+              className="bg-yellow-400 text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-colors"
+            >
+              Join Our Team
+            </Link>
+            <Link
+              href="/contact"
+              className="border border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors"
+            >
+              Partner With Us
+            </Link>
           </div>
-        </div>
-
-        {/* Features section - horizontal minimal design */}
-        <div className="relative pt-8 pb-16 bg-white overflow-hidden">
-          {/* Background decorative elements */}
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
           
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-16">
-              <div className="text-center">
-                <div className="w-20 h-20 mx-auto bg-gradient-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-4 shadow-lg transform transition-all hover:scale-110 hover:rotate-3">
-                  <FaStethoscope className="text-white text-3xl" />
-                </div>
-                <h3 className="text-xl font-bold text-[#0a192f]">Healthcare Focus</h3>
-                <div className="w-10 h-1 bg-blue-200 mx-auto my-2"></div>
-                <p className="text-gray-700">BHC&apos;s first consulting organization solely focused on elevating groups from all aspects of the healthcare sector.</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-20 h-20 mx-auto bg-gradient-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-4 shadow-lg transform transition-all hover:scale-110 hover:rotate-3">
-                  <FaHeartbeat className="text-white text-3xl" />
-                </div>
-                <h3 className="text-xl font-bold text-[#0a192f]">Diverse Clients</h3>
-                <div className="w-10 h-1 bg-blue-200 mx-auto my-2"></div>
-                <p className="text-gray-700">We work with ambulance companies, independent nursing facilities, hospitals, pharmaceutical companies, clinical research labs and more.</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-20 h-20 mx-auto bg-gradient-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center mb-4 shadow-lg transform transition-all hover:scale-110 hover:rotate-3">
-                  <FaHospital className="text-white text-3xl" />
-                </div>
-                <h3 className="text-xl font-bold text-[#0a192f]">Real Experience</h3>
-                <div className="w-10 h-1 bg-blue-200 mx-auto my-2"></div>
-                <p className="text-gray-700">Our unique, project-based approach to consulting ensures that members get real-world experience and learn technical and business skills through their time at BHC.</p>
-              </div>
-            </div>
-          </div>
+          <p className="text-xl text-white">
+            Connect with UCLA's premier healthcare and technology consulting organization.
+          </p>
         </div>
-
-        {/* Partners section */}
-        <div className="relative overflow-hidden">
-          {/* Background decorative elements */}
-          <div className="absolute -top-40 left-0 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-4000 z-10"></div>
-          <div className="absolute bottom-0 right-20 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000 z-10"></div>
-          
-          <div className="w-full relative" style={{ maxHeight: "500px", overflow: "hidden" }}>
-            <Image 
-              src="/images/Screenshot 2025-04-17 151656.png" 
-              alt="Companies Background"
-              width={1920}
-              height={500}
-              className="w-full h-auto object-contain object-top"
-              style={{ maxHeight: "500px" }}
-            />
-            <div className="absolute inset-0 bg-white/70"></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#0a192f] mb-4 md:mb-6">
-                  WHERE WE <span className="text-[#1d4ed8]">GO</span><span className="text-[#1d4ed8]">.</span>
-                </h2>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+      </section>
     </main>
   );
 }
