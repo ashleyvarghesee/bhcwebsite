@@ -61,34 +61,64 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-24 md:py-32">
+    <main className="min-h-screen bg-black relative overflow-hidden">
+      {/* Background image container */}
+      <div 
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `url('/images/skyline.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+          opacity: 0.3,
+          filter: 'blur(2px)',
+          zIndex: 0
+        }}
+      ></div>
+      
+      {/* Dark overlay */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0,0,0,0.7)',
+          zIndex: 1
+        }}
+      ></div>
+      
+      <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 md:mb-16 text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-[#0a192f] mb-2">
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
               Contact Us
             </h1>
-            <div className="w-20 h-1 bg-[#1d4ed8] mx-auto mb-6"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <div className="w-20 h-1 bg-yellow-400 mx-auto mb-6"></div>
+            <p className="text-gray-300 max-w-2xl mx-auto">
               Have questions about Bruin Health Consulting? Our team is here to help.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-1">
-              <div className="bg-gray-50 p-6 border-l-4 border-[#1d4ed8]">
-                <h2 className="text-xl font-semibold text-[#0a192f] mb-6">Contact Information</h2>
+              <div className="bg-gray-900/90 backdrop-blur-sm p-6 border-l-4 border-yellow-400">
+                <h2 className="text-xl font-semibold text-white mb-6">Contact Information</h2>
                 
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="mt-1 bg-[#1d4ed8] rounded p-2 mr-4">
-                      <FaEnvelope className="text-white" />
+                    <div className="mt-1 bg-yellow-400 rounded p-2 mr-4">
+                      <FaEnvelope className="text-black" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 font-medium">Email</p>
+                      <p className="text-sm text-gray-400 font-medium">Email</p>
                       <a 
                         href="mailto:bruinhealthconsulting@gmail.com" 
-                        className="text-[#1d4ed8] hover:underline"
+                        className="text-yellow-400 hover:underline"
                       >
                         bruinhealthconsulting@gmail.com
                       </a>
@@ -100,29 +130,29 @@ export default function Contact() {
             
             <div className="md:col-span-2">
               {isSubmitted ? (
-                <div className="bg-white border border-gray-200 p-8">
+                <div className="bg-gray-900/90 backdrop-blur-sm border border-white/10 p-8">
                   <div className="flex items-center space-x-4 mb-6">
-                    <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="flex-shrink-0 w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h2 className="text-2xl font-bold text-[#0a192f]">Message Sent</h2>
+                    <h2 className="text-2xl font-bold text-white">Message Sent</h2>
                   </div>
-                  <p className="text-gray-600 mb-8">Thank you for contacting Bruin Health Consulting. We have received your message and will respond to you shortly.</p>
+                  <p className="text-gray-300 mb-8">Thank you for contacting Bruin Health Consulting. We have received your message and will respond to you shortly.</p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="bg-[#1d4ed8] text-white px-6 py-3 hover:bg-[#1e40af] transition-all duration-300"
+                    className="bg-yellow-400 text-black px-6 py-3 hover:bg-yellow-300 transition-all duration-300"
                   >
                     Send Another Message
                   </button>
                 </div>
               ) : (
-                <div className="bg-white border border-gray-200 p-8">
-                  <h2 className="text-2xl font-bold text-[#0a192f] mb-6">Send a Message</h2>
+                <div className="bg-gray-900/90 backdrop-blur-sm border border-white/10 p-8">
+                  <h2 className="text-2xl font-bold text-white mb-6">Send a Message</h2>
                   
                   {error && (
-                    <div className="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 mb-6">
+                    <div className="bg-red-500/20 border-l-4 border-red-500 text-red-300 p-4 mb-6">
                       <p>{error}</p>
                     </div>
                   )}
@@ -130,7 +160,7 @@ export default function Contact() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Name</label>
+                        <label htmlFor="name" className="block text-gray-300 font-medium mb-2">Name</label>
                         <input
                           type="text"
                           id="name"
@@ -139,12 +169,12 @@ export default function Contact() {
                           onChange={handleChange}
                           placeholder="Your Name"
                           required
-                          className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#1d4ed8]"
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400"
                         />
                       </div>
                       
                       <div>
-                        <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email</label>
+                        <label htmlFor="email" className="block text-gray-300 font-medium mb-2">Email</label>
                         <input
                           type="email"
                           id="email"
@@ -153,13 +183,13 @@ export default function Contact() {
                           onChange={handleChange}
                           placeholder="your.email@example.com"
                           required
-                          className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#1d4ed8]"
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400"
                         />
                       </div>
                     </div>
                     
                     <div>
-                      <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">Phone (Optional)</label>
+                      <label htmlFor="phone" className="block text-gray-300 font-medium mb-2">Phone (Optional)</label>
                       <input
                         type="tel"
                         id="phone"
@@ -167,12 +197,12 @@ export default function Contact() {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="(123) 456-7890"
-                        className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#1d4ed8]"
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400"
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Message</label>
+                      <label htmlFor="message" className="block text-gray-300 font-medium mb-2">Message</label>
                       <textarea
                         id="message"
                         name="message"
@@ -181,14 +211,14 @@ export default function Contact() {
                         placeholder="How can we help you?"
                         rows={5}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#1d4ed8]"
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400"
                       ></textarea>
                     </div>
                     
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#1d4ed8] text-white px-6 py-3 flex items-center justify-center hover:bg-[#1e40af] transition-all duration-300 disabled:bg-blue-300"
+                      className="w-full bg-yellow-400 text-black px-6 py-3 flex items-center justify-center hover:bg-yellow-300 transition-all duration-300 disabled:bg-yellow-300/50"
                     >
                       {isSubmitting ? (
                         "Processing..."
