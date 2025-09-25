@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black">
       {/* Hero Section - Aviato Style with Dark Theme and Background Image */}
-      <section className="relative bg-black py-20 lg:py-32 overflow-hidden">
+      <section className="relative bg-black py-12 lg:py-16 overflow-hidden">
         {/* Background image container */}
         <div 
           style={{
@@ -20,7 +20,7 @@ export default function Home() {
             bottom: 0,
             backgroundImage: `url('/images/skyline.jpg')`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center top',
             opacity: 0.3,
             filter: 'blur(2px)',
             zIndex: 0
@@ -71,6 +71,131 @@ export default function Home() {
               </Link>
             </div>
             
+          </div>
+        </div>
+      </section>
+
+      {/* Client Slider Section */}
+      <section className="py-8 bg-black/90 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
+              Who We've Worked With
+            </h2>
+            <p className="text-base text-gray-300 max-w-xl mx-auto">
+              Trusted by leading organizations in healthcare, technology, and beyond
+            </p>
+          </div>
+          
+          {/* Logo Carousel */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll space-x-20 items-center justify-center">
+              {/* First set of logos */}
+              <div className="flex space-x-20 items-center">
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/image2vector.svg" 
+                    alt="Client Logo" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/stanford-university-logo.png" 
+                    alt="Stanford University" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/OV_UCLA_Home-Logo.png" 
+                    alt="Olive View UCLA" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-28 h-16 flex items-center justify-center">
+                  <div className="flex items-center gap-0">
+                    <img 
+                      src="/logos/UCLA-HealthSystem-Logo-RGB (1).png" 
+                      alt="UCLA" 
+                      className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    />
+                    <img 
+                      src="/logos/UCLA-HealthSystem-Logo-RGB (2).png" 
+                      alt="Health" 
+                      className="h-8 w-auto filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                </div>
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/image2vector (4).svg" 
+                    alt="Client Logo" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/image2vector (5).svg" 
+                    alt="Client Logo" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              </div>
+              
+              {/* Duplicate set for seamless loop */}
+              <div className="flex space-x-20 items-center">
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/image2vector.svg" 
+                    alt="Client Logo" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/stanford-university-logo.png" 
+                    alt="Stanford University" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/OV_UCLA_Home-Logo.png" 
+                    alt="Olive View UCLA" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-28 h-16 flex items-center justify-center">
+                  <div className="flex items-center gap-0">
+                    <img 
+                      src="/logos/UCLA-HealthSystem-Logo-RGB (1).png" 
+                      alt="UCLA" 
+                      className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    />
+                    <img 
+                      src="/logos/UCLA-HealthSystem-Logo-RGB (2).png" 
+                      alt="Health" 
+                      className="h-8 w-auto filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                </div>
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/image2vector (4).svg" 
+                    alt="Client Logo" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/image2vector (5).svg" 
+                    alt="Client Logo" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -179,7 +304,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 
       {/* Final CTA Section with Companies Banner */}
       <section className="py-20 lg:py-32 relative overflow-hidden">
