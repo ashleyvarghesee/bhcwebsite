@@ -116,15 +116,6 @@ body::before {
   }
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -143,6 +134,15 @@ body::before {
 
 .animate-count {
   animation: count 0.5s ease-out forwards;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-scroll {
