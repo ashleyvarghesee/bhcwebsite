@@ -89,9 +89,9 @@ export default function Home() {
           
           {/* Logo Carousel */}
           <div className="relative overflow-hidden">
-            <div className="flex animate-scroll space-x-20 items-center justify-center">
+            <div className="flex animate-scroll items-center w-[300%]">
               {/* First set of logos */}
-              <div className="flex space-x-20 items-center">
+              <div className="flex space-x-16 items-center w-1/3">
                 <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
                   <img 
                     src="/logos/image2vector.svg" 
@@ -113,7 +113,7 @@ export default function Home() {
                     className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
-                <div className="flex-shrink-0 w-28 h-16 flex items-center justify-center">
+                <div className="flex-shrink-0 w-28 h-16 flex items-center justify-center mr-8">
                   <div className="flex items-center gap-0">
                     <img 
                       src="/logos/UCLA-HealthSystem-Logo-RGB (1).png" 
@@ -144,7 +144,7 @@ export default function Home() {
               </div>
               
               {/* Duplicate set for seamless loop */}
-              <div className="flex space-x-20 items-center">
+              <div className="flex space-x-16 items-center w-1/3">
                 <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
                   <img 
                     src="/logos/image2vector.svg" 
@@ -166,7 +166,60 @@ export default function Home() {
                     className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
-                <div className="flex-shrink-0 w-28 h-16 flex items-center justify-center">
+                <div className="flex-shrink-0 w-28 h-16 flex items-center justify-center mr-8">
+                  <div className="flex items-center gap-0">
+                    <img 
+                      src="/logos/UCLA-HealthSystem-Logo-RGB (1).png" 
+                      alt="UCLA" 
+                      className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    />
+                    <img 
+                      src="/logos/UCLA-HealthSystem-Logo-RGB (2).png" 
+                      alt="Health" 
+                      className="h-8 w-auto filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                </div>
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/image2vector (4).svg" 
+                    alt="Client Logo" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/image2vector (5).svg" 
+                    alt="Client Logo" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              </div>
+              
+              {/* Third set for continuous coverage */}
+              <div className="flex space-x-16 items-center w-1/3">
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/image2vector.svg" 
+                    alt="Client Logo" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/stanford-university-logo.png" 
+                    alt="Stanford University" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+                  <img 
+                    src="/logos/OV_UCLA_Home-Logo.png" 
+                    alt="Olive View UCLA" 
+                    className="h-10 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+                <div className="flex-shrink-0 w-28 h-16 flex items-center justify-center mr-8">
                   <div className="flex items-center gap-0">
                     <img 
                       src="/logos/UCLA-HealthSystem-Logo-RGB (1).png" 
