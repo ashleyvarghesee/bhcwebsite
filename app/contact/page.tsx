@@ -106,19 +106,19 @@ export default function Contact() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-1">
-              <div className="bg-gray-900/90 backdrop-blur-sm p-6 border-l-4 border-yellow-400">
+              <div className="bg-gray-900/90 backdrop-blur-sm p-8 border-l-4 border-yellow-400">
                 <h2 className="text-xl font-semibold text-white mb-6">Contact Information</h2>
                 
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="mt-1 bg-yellow-400 rounded p-2 mr-4">
+                    <div className="mt-1 bg-yellow-400 rounded p-2 mr-4 flex-shrink-0">
                       <FaEnvelope className="text-black" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <p className="text-sm text-gray-400 font-medium">Email</p>
                       <a 
                         href="mailto:bruinhealthconsulting@gmail.com" 
-                        className="text-yellow-400 hover:underline"
+                        className="text-yellow-400 hover:underline break-words"
                       >
                         bruinhealthconsulting@gmail.com
                       </a>

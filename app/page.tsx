@@ -177,7 +177,7 @@ export default function Home() {
                 UCLA's premier student-run consulting organization specializing in healthcare and technology.
               </p>
               <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-                BHC partners with healthcare organizations, biotech companies, and health tech startups to deliver strategic consulting services. Our team works on real-world projects ranging from healthcare operations optimization to digital health implementation, providing members with hands-on experience in both healthcare and technology consulting.
+                Bruin Health Consulting (BHC) is the founding chapter of the Collegiate Health Consulting Alliance, a nationwide group of university clubs that works with healthcare organizations and biotech companies to deliver strategic and technical consulting services. BHC partners with healthcare organizations, biotech companies, and health tech startups to deliver strategic consulting services. Our team works on real-world projects ranging from healthcare operations optimization to digital health implementation, providing members with hands-on experience in both healthcare and technology consulting.
               </p>
               <Link
                 href="/apply"
