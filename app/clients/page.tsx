@@ -37,11 +37,11 @@ export default function ServicesPage() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: `url('/images/skyline.jpg')`,
+          backgroundImage: `url('/images/uclanight.png')`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center top',
-          opacity: 0.3,
-          filter: 'blur(2px)',
+          backgroundPosition: 'center center',
+          opacity: 0.7,
+          filter: 'blur(0.5px)',
           zIndex: 0
         }}
       ></div>

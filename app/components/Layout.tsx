@@ -16,6 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/clients", label: "Clients" },
+    { href: "/research", label: "Research" },
     { href: "/contact", label: "Contact Us" },
     { href: "/apply", label: "Apply" },
   ];
@@ -48,7 +49,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }`;
 
   return (
-    <div className="min-h-screen flex flex-col bg-black overflow-x-hidden w-full">
+    <div className="relative min-h-screen flex flex-col bg-black overflow-x-hidden w-full">
+      {/* Global background image */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          backgroundImage: "url('/images/uclanight.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          opacity: 0.75,
+        }}
+      ></div>
       <header className={headerClasses}>
         {/* Mobile Header */}
         <div className="md:hidden flex justify-between items-center px-4 h-16 bg-black/95 backdrop-blur-sm border-b border-gray-800">
