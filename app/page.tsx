@@ -8,9 +8,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black">
-      {/* Hero Section - Aviato Style with Dark Theme and Background Image */}
-      <section className="relative bg-black py-12 lg:py-16 overflow-hidden">
-        {/* Background image container */}
+      {/* Combined hero + clients with shared background */}
+      <section className="relative overflow-hidden">
         <div 
           style={{
             position: 'absolute',
@@ -18,16 +17,14 @@ export default function Home() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url('/images/skyline.jpg')`,
+            backgroundImage: `url('/images/uclanight.png')`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center top',
-            opacity: 0.3,
-            filter: 'blur(2px)',
+            backgroundPosition: 'center center',
+            opacity: 0.90,
+            filter: 'blur(0.5px) saturate(0.8) grayscale(0.1) brightness(0.95)',
             zIndex: 0
           }}
         ></div>
-        
-        {/* Dark overlay */}
         <div
           style={{
             position: 'absolute',
@@ -35,133 +32,133 @@ export default function Home() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(0,0,0,0.7)',
+            backgroundColor: 'rgba(0,0,0,0.6)',
             zIndex: 1
           }}
         ></div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            {/* Main headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
-              BRUIN HEALTH CONSULTING
-            </h1>
-            
-            {/* Subtitle */}
-            <p className="text-xl lg:text-2xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
-              UCLA's premier student-run consulting organization specializing in healthcare and technology.
-            </p>
-            <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Committed to excellence, driven by impact.
-            </p>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Link
-                href="/apply"
-                className="bg-yellow-400 text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-colors"
-              >
-                Join Our Team
-              </Link>
-              <Link
-                href="/contact"
-                className="border border-blue-400 text-blue-400 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-400/10 transition-colors"
-              >
-                Partner With Us
-              </Link>
+        <div className="relative z-10">
+          {/* Hero Section */}
+          <section className="py-10 lg:py-12 min-h-[55vh] flex flex-col justify-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              <div className="text-center">
+                {/* Main headline */}
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight whitespace-nowrap">
+                  BRUIN HEALTH CONSULTING
+                </h1>
+                
+                {/* Subtitle */}
+                <p className="text-xl lg:text-2xl text-white mb-10 max-w-3xl mx-auto leading-relaxed">
+                  UCLA's premier student-run consulting organization specializing in healthcare and technology.
+                </p>
+                
+                {/* CTA Text Links */}
+                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12 text-xl sm:text-2xl font-semibold text-white/90 tracking-tight">
+                  <Link
+                    href="/apply"
+                    className="relative inline-block transition duration-300 ease-out hover:text-yellow-200 after:content-[''] after:absolute after:inset-0 after:bg-yellow-200/15 after:rounded-md after:opacity-0 after:scale-95 after:blur-[1px] after:transition-all after:duration-300 after:ease-out hover:after:opacity-100 hover:after:scale-100"
+                  >
+                    Join Our Team
+                  </Link>
+                  <span className="hidden sm:block text-white/60">•</span>
+                  <Link
+                    href="/contact"
+                    className="relative inline-block transition duration-300 ease-out hover:text-blue-200 after:content-[''] after:absolute after:inset-0 after:bg-blue-200/15 after:rounded-md after:opacity-0 after:scale-95 after:blur-[1px] after:transition-all after:duration-300 after:ease-out hover:after:opacity-100 hover:after:scale-100"
+                  >
+                    Connect With Us
+                  </Link>
+                </div>
+                
+              </div>
             </div>
-            
+          </section>
+
+          {/* Client Slider Section */}
+          <section className="py-4">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
+                  Who We've Worked With
+                </h2>
+              </div>
+              
+              {/* Logo Carousel */}
+              <div className="relative overflow-hidden">
+                <div className="flex animate-scroll space-x-16">
+              <div className="flex-shrink-0">
+                <img 
+                  src="/images/Logo_Hoag.png" 
+                  alt="Hoag" 
+                  className="h-10 w-auto opacity-70"
+                />
+              </div>
+              <div className="flex-shrink-0">
+                <img 
+                  src="/logos/OV_UCLA_Home-Logo.png" 
+                  alt="Olive View UCLA" 
+                  className="h-10 w-auto opacity-70"
+                />
+              </div>
+              <div className="flex-shrink-0">
+                <img 
+                  src="/logos/image2vector (4).svg" 
+                  alt="Client Logo" 
+                  className="h-10 w-auto opacity-70"
+                />
+              </div>
+              <div className="flex-shrink-0">
+                <img 
+                  src="/logos/image2vector (5).svg" 
+                  alt="Client Logo" 
+                  className="h-10 w-auto opacity-70"
+                />
+              </div>
+              <div className="flex-shrink-0">
+                <img 
+                  src="/logos/stanford-university-logo.png" 
+                  alt="Stanford University" 
+                  className="h-10 w-auto opacity-70"
+                />
+              </div>
+              <div className="flex-shrink-0">
+                <img 
+                  src="/logos/OV_UCLA_Home-Logo.png" 
+                  alt="Olive View UCLA" 
+                  className="h-10 w-auto opacity-70"
+                />
+              </div>
+              <div className="flex-shrink-0">
+                <img 
+                  src="/logos/image2vector (4).svg" 
+                  alt="Client Logo" 
+                  className="h-10 w-auto opacity-70"
+                />
+              </div>
+              <div className="flex-shrink-0">
+                <img 
+                  src="/logos/image2vector (5).svg" 
+                  alt="Client Logo" 
+                  className="h-10 w-auto opacity-70"
+                />
+              </div>
+              <div className="flex-shrink-0">
+                <img 
+                  src="/images/Logo_Hoag.png" 
+                  alt="Hoag" 
+                  className="h-10 w-auto opacity-70"
+                />
+              </div>
+              <div className="flex-shrink-0">
+                <img 
+                  src="/logos/stanford-university-logo.png" 
+                  alt="Stanford University" 
+                  className="h-10 w-auto opacity-70"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Client Slider Section */}
-      <section className="py-8 bg-black/90 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-3">
-              Who We've Worked With
-            </h2>
-            <p className="text-base text-gray-300 max-w-xl mx-auto">
-              Trusted by leading organizations in healthcare, technology, and beyond
-            </p>
-          </div>
-          
-          {/* Logo Carousel */}
-          <div className="relative overflow-hidden">
-            <div className="flex animate-scroll space-x-16">
-              <div className="flex-shrink-0">
-                <img 
-                  src="/logos/image2vector.svg" 
-                  alt="Client Logo" 
-                  className="h-10 w-auto opacity-70"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <img 
-                  src="/logos/stanford-university-logo.png" 
-                  alt="Stanford University" 
-                  className="h-10 w-auto opacity-70"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <img 
-                  src="/logos/OV_UCLA_Home-Logo.png" 
-                  alt="Olive View UCLA" 
-                  className="h-10 w-auto opacity-70"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <img 
-                  src="/logos/image2vector (4).svg" 
-                  alt="Client Logo" 
-                  className="h-10 w-auto opacity-70"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <img 
-                  src="/logos/image2vector (5).svg" 
-                  alt="Client Logo" 
-                  className="h-10 w-auto opacity-70"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <img 
-                  src="/logos/image2vector.svg" 
-                  alt="Client Logo" 
-                  className="h-10 w-auto opacity-70"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <img 
-                  src="/logos/stanford-university-logo.png" 
-                  alt="Stanford University" 
-                  className="h-10 w-auto opacity-70"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <img 
-                  src="/logos/OV_UCLA_Home-Logo.png" 
-                  alt="Olive View UCLA" 
-                  className="h-10 w-auto opacity-70"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <img 
-                  src="/logos/image2vector (4).svg" 
-                  alt="Client Logo" 
-                  className="h-10 w-auto opacity-70"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <img 
-                  src="/logos/image2vector (5).svg" 
-                  alt="Client Logo" 
-                  className="h-10 w-auto opacity-70"
-                />
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -173,10 +170,10 @@ export default function Home() {
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                 What is Bruin Health Consulting?
               </h2>
-              <p className="text-xl lg:text-2xl text-gray-300 mb-6 leading-relaxed">
+              <p className="text-xl lg:text-2xl text-white mb-6 leading-relaxed">
                 UCLA's premier student-run consulting organization specializing in healthcare and technology.
               </p>
-              <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+              <p className="text-lg text-white mb-8 leading-relaxed">
                 Bruin Health Consulting (BHC) is the founding chapter of the Collegiate Health Consulting Alliance, a nationwide group of university clubs that works with healthcare organizations and biotech companies to deliver strategic and technical consulting services. BHC partners with healthcare organizations, biotech companies, and health tech startups to deliver strategic consulting services. Our team works on real-world projects ranging from healthcare operations optimization to digital health implementation, providing members with hands-on experience in both healthcare and technology consulting.
               </p>
               <Link
@@ -215,7 +212,7 @@ export default function Home() {
             </div>
             <div className="relative overflow-hidden rounded-lg">
               <Image
-                src="/images/IMG_0531 (1).JPG"
+                src="/images/IMG_6451.JPG"
                 alt="BHC Team Meeting"
                 width={300}
                 height={300}
@@ -224,7 +221,7 @@ export default function Home() {
             </div>
             <div className="relative overflow-hidden rounded-lg">
               <Image
-                src="/images/IMG_3046 (1).jpg"
+                src="/images/DSCF1546.jpg"
                 alt="BHC Consulting Work"
                 width={300}
                 height={300}
@@ -244,72 +241,34 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-black/70 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaStethoscope className="text-blue-400 text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">Healthcare Focus</h3>
-              <p className="text-gray-400">BHC's first consulting organization solely focused on elevating groups from all aspects of the healthcare sector.</p>
+              <p className="text-white">BHC's first consulting organization solely focused on elevating groups from all aspects of the healthcare sector.</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-black/70 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaHospital className="text-blue-400 text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">Diverse Clients</h3>
-              <p className="text-gray-400">We work with hospitals, pharmaceutical companies, biotech firms, health tech startups, and clinical research organizations.</p>
+              <p className="text-white">We work with hospitals, pharmaceutical companies, biotech firms, health tech startups, and clinical research organizations.</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-black/70 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaChartLine className="text-blue-400 text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">Real Experience</h3>
-              <p className="text-gray-400">Our project-based approach ensures members gain real-world experience in healthcare and technology consulting.</p>
+              <p className="text-white">Our project-based approach ensures members gain real-world experience in healthcare and technology consulting.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section with Companies Banner */}
-      <section className="py-20 lg:py-32 relative overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image 
-            src="/images/Screenshot 2025-04-17 151656.png" 
-            alt="Companies We Work With"
-            width={1920}
-            height={800}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
-        
-        {/* Content overlay */}
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Ready to make an impact in healthcare and technology?
-          </h2>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Link
-              href="/apply"
-              className="bg-yellow-400 text-black px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-300 transition-colors"
-            >
-              Join Our Team
-            </Link>
-            <Link
-              href="/contact"
-              className="border border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/10 transition-colors"
-            >
-              Partner With Us
-            </Link>
-          </div>
-          
-          <p className="text-xl text-white">
-            Connect with UCLA's premier healthcare and technology consulting organization.
-          </p>
-        </div>
-      </section>
+      
+    
     </main>
   );
 }

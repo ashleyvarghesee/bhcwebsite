@@ -160,7 +160,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 />
                 <span className="text-white text-xl font-semibold">Bruin Health Consulting</span>
               </div>
-              <p className="text-gray-400 text-sm max-w-md">
+              <p className="text-white text-sm max-w-md">
                 UCLA's first and foremost student-run healthcare consulting organization. Committed to excellence, driven by impact.
               </p>
             </div>
@@ -168,24 +168,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div>
               <h3 className="text-white font-semibold mb-4">Company</h3>
               <ul className="space-y-2">
-                <li><Link href="/apply" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Careers</Link></li>
-                <li><Link href="/contact" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Contact</Link></li>
-                <li><a href="https://www.instagram.com/bruinhealthconsulting/" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Instagram</a></li>
-                <li><a href="https://www.linkedin.com/company/bruin-health-consulting/" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">LinkedIn</a></li>
+                <li><Link href="/apply" className="text-white hover:text-yellow-400 transition-colors text-sm">Careers</Link></li>
+                <li><Link href="/contact" className="text-white hover:text-yellow-400 transition-colors text-sm">Contact</Link></li>
+                <li><a href="https://www.instagram.com/bruinhealthconsulting/" className="text-white hover:text-yellow-400 transition-colors text-sm">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/company/bruin-health-consulting/" className="text-white hover:text-yellow-400 transition-colors text-sm">LinkedIn</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="text-white font-semibold mb-4">Legal</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Terms & Conditions</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Privacy Policy</a></li>
+                <li><a href="#" className="text-white hover:text-yellow-400 transition-colors text-sm">Terms & Conditions</a></li>
+                <li><a href="#" className="text-white hover:text-yellow-400 transition-colors text-sm">Privacy Policy</a></li>
               </ul>
             </div>
           </div>
           
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+            <p className="text-white text-sm mb-4 md:mb-0">
               © 2025 Bruin Health Consulting. All Rights Reserved.
             </p>
             
@@ -194,13 +194,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 href="https://www.instagram.com/bruinhealthconsulting/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-yellow-400 transition-colors"
+                className="text-white hover:text-yellow-400 transition-colors"
               >
                 <FaInstagram size={20} />
               </a>
               <a
                 href="mailto:bruinhealthconsulting@gmail.com"
-                className="text-gray-400 hover:text-yellow-400 transition-colors"
+                className="text-white hover:text-yellow-400 transition-colors"
               >
                 <MdEmail size={20} />
               </a>

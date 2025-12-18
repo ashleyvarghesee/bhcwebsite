@@ -1,10 +1,19 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import Layout from './components/Layout';
-import { Inter, Raleway } from 'next/font/google';
+import { IBM_Plex_Sans, Libre_Baskerville } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const raleway = Raleway({ subsets: ['latin'], variable: '--font-raleway', weight: ['400', '700'] });
+const plexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-body',
+});
+
+const libreBaskerville = Libre_Baskerville({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-heading',
+});
 
 export const metadata: Metadata = {
   title: 'Bruin Health Consulting',
@@ -18,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${raleway.variable} font-sans`}>
+      <body className={`${plexSans.variable} ${libreBaskerville.variable} font-sans`}>
         <Layout>{children}</Layout>
       </body>
     </html>
