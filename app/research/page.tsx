@@ -56,7 +56,7 @@ export default function ResearchPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center justify-center">
             <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-[0_16px_32px_rgba(0,0,0,0.35)] aspect-[4/3] max-w-[520px] mx-auto w-full">
               <Image
-                src="/images/IMG_6451.JPG"
+                src="/images/IMG_6451.jpg"
                 alt="Functional ultrasound imaging research, sample 1"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -78,6 +78,12 @@ export default function ResearchPage() {
           <div className="max-w-5xl mx-auto text-center">
             <p className="text-white text-base leading-relaxed">
               Functional ultrasound imaging (fUSI) is a powerful neuroimaging technology based on sensitive Doppler signals to detect cerebral blood flow and volume, but physiological noise often obscures spatiotemporal detail. This work compares a classical Gaussian + band-pass filtering baseline against a 3-D U-Net baseline and a 3-D U-Net + Transformer trained on synthetically corrupted Caltech fUSI data to achieve data-driven denoising that preserves both fine spatial detail and global temporal consistency. Presented at the Society of Neuroscience 2025 Annual Conference and the UCLA Neuroscience Day Conference, awarded a UCLA Brain Research Initiative scholarship, and now being integrated into labs at UCLA.
+            </p>
+          </div>
+
+          <div className="text-center pt-20">
+            <p className="text-white text-base lg:text-lg leading-relaxed">
+              Additional research initiatives currently in the works...
             </p>
           </div>
         </div>

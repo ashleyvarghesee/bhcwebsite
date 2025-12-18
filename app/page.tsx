@@ -212,7 +212,7 @@ export default function Home() {
             </div>
             <div className="relative overflow-hidden rounded-lg">
               <Image
-                src="/images/IMG_6451.JPG"
+                src="/images/IMG_6451.jpg"
                 alt="BHC Team Meeting"
                 width={300}
                 height={300}
@@ -221,7 +221,7 @@ export default function Home() {
             </div>
             <div className="relative overflow-hidden rounded-lg">
               <Image
-                src="/images/DSCF1546.jpg"
+                src="/images/DSCF1546.JPG"
                 alt="BHC Consulting Work"
                 width={300}
                 height={300}
