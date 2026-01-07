@@ -58,10 +58,10 @@ export default function ApplyPage() {
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">BHC is Recruiting!</h2>
             <p className="text-gray-300 max-w-lg mx-auto text-lg leading-relaxed mb-6">
-              BHC is recruiting new members for fall consulting projects with biotech and biomedical companies. We're looking for students interested in business/tech consulting.
+              BHC is recruiting new members for winter consulting projects with biotech and biomedical companies. We're looking for students interested in business/tech consulting.
             </p>
             <Link 
-              href="https://docs.google.com/forms/d/e/1FAIpQLScvCdIY3avpmh7ACdzWA7icotPbuLFzXMMvadV5eez5EHtVcA/viewform"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdIG_KamY7N0ew4ms9Bx_px-_7kKasm_BfxeVHG5PoVCMac1g/viewform"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-yellow-400 text-black hover:bg-yellow-300 transition-colors rounded-md text-lg font-medium"
